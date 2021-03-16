@@ -1,16 +1,8 @@
 # Digital ATM
 ## States, props, and DOM events
 
-Functionality:
-- Withdraw
-- Deposit
-- Your balance
-- A message
-
-Layout:
-- Frame
-- Screen
-- 2 Buttons
-- Input field
-- Message div
-- Balance div
+**Learning objectives**
+- Storing data in a state
+- Create user event handlers
+- Modify the state based on user interaction
+- Pass down data to child components
