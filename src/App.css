@@ -1,0 +1,84 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace
+}
+
+#root {
+  max-height: 100vh;
+}
+
+.frame {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(68, 94, 85);
+  min-height: 100vh;
+  max-height: 100vh;
+}
+
+.screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap:wrap;
+  background-color: rgba(128, 255, 0, 0.74);
+  height: 500px;
+  width: 800px;
+  margin: 0 auto;
+  border: black solid 2px;
+  border-radius: 100px;
+
+}
+
+.screen h3 {
+  margin-top: 25px;
+  text-align: center;
+  flex-basis: 100%;
+  align-self: flex-start
+}
+
+.screen input {
+  text-align: center;
+  width: 500px;
+  font-size: 100px;
+  background-color: transparent;
+  border: none;
+  color: black;
+}
+
+.screen input:focus {
+  outline: none;
+}
+
+.screen div {
+  text-align: center;
+  align-self: flex-end;
+  flex-basis: 100%;
+  margin-bottom: 25px;
+}
+
+.buttons {
+  padding-top: 10px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-around;
+  width: 600px;
+
+}
+
+button {
+  padding: 25px;
+  border-radius: 15px;
+  font-size: 30px;
+}
+
+button:focus {
+  outline: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
