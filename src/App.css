@@ -33,6 +33,7 @@
 }
 
 .screen h3 {
+  color:red;
   margin-top: 25px;
   text-align: center;
   flex-basis: 100%;
