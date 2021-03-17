@@ -40,8 +40,9 @@ class App extends React.Component {
     return (
       <div className="frame">
         <div className="screen">
-          <h3>{this.state.message}</h3>
+          <h3 data-cy="message">{this.state.message}</h3>
           <input
+            data-cy="amount-input"
             name="amount"
             type="number"
             placeholder="Amount..."
@@ -51,10 +52,10 @@ class App extends React.Component {
           <Balance balance={this.state.balance} />
         </div>
         <div className="buttons">
-          <button onClick={() => this.withdraw()}>
+          <button data-cy="withdraw-button" onClick={() => this.withdraw()}>
             Withdraw
             </button>
-          <button onClick={() => this.deposit()}>
+          <button data-cy="deposit-button" onClick={() => this.deposit()}>
             Deposit
             </button>
         </div>
