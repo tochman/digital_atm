@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Balance from './components/Balance'
 import './App.css';
 
-class App extends React.Component {
+class App extends Component {
   render() {
     return (
       <div className="frame">
         <div className="screen">
-          <h3>Thank you, please come again!</h3>
+          <h3>Help! I'm broken.</h3>
           <input
             name="amount"
             type="number"
