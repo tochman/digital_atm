@@ -39,6 +39,7 @@ class App extends Component {
         <div className="screen">
           <h3 id="message">{this.state.message}</h3>
           <input
+            data-cy="amount-input"
             name="amount"
             type="number"
             placeholder="Amount..."
