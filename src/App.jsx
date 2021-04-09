@@ -3,6 +3,9 @@ import Balance from './components/Balance'
 import './App.css';
 
 class App extends Component {
+  state = {
+    balance: 1000
+  }
   render() {
     return (
       <div className="frame">
@@ -13,7 +16,7 @@ class App extends Component {
             type="number"
             placeholder="Amount..."
           />
-          <Balance />
+          <Balance balance={this.state.balance}/>
         </div>
         <div className="buttons">
           <button>Withdraw</button>
