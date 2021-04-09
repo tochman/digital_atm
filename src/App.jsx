@@ -4,7 +4,13 @@ import './App.css';
 
 class App extends Component {
   state = {
-    balance: 1000
+    balance: 1000,
+    amount: 0
+  }
+
+  withdraw() {
+    const newBalance = this.state.balance - this.state.amount
+    this.setState({ balance: newBalance })
   }
   render() {
     return (
@@ -15,11 +21,14 @@ class App extends Component {
             name="amount"
             type="number"
             placeholder="Amount..."
+            onBlur={event => this.setState({ amount: Number(event.target.value) })}
           />
-          <Balance balance={this.state.balance}/>
+          <Balance balance={this.state.balance} />
         </div>
         <div className="buttons">
-          <button>Withdraw</button>
+          <button id="withdraw-button"
+            onClick={() => this.withdraw()}
+          >Withdraw</button>
           <button>Deposit</button>
         </div>
       </div>
