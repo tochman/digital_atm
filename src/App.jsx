@@ -13,12 +13,26 @@ class App extends Component {
     let newBalance, newMessage
     switch (type) {
       case "deposit":
-        newBalance = this.state.balance + this.state.amount
-        newMessage = `Uh, what\'s that? ${this.state.amount}kr? Why, thank you!`
+        if (this.state.amount === 0) {
+          newBalance = this.state.balance
+          newMessage = `Come on! Quit playing around!`
+        } else {
+          newBalance = this.state.balance + this.state.amount
+          newMessage = `Uh, what\'s that? ${this.state.amount}kr? Why, thank you!`
+        }
         break
       case "withdraw":
-        newBalance = this.state.balance - this.state.amount
-        newMessage = `Sure, take my money... Here\'s ${this.state.amount}kr.`
+        if (this.state.amount > this.state.balance) {
+          newBalance = this.state.balance
+          newMessage = `Ha! You don\'t have enough money! You\'re ${Math.abs(this.state.balance - this.state.amount)}kr short.`
+        } else if (this.state.amount === 0) {
+          newBalance = this.state.balance
+          newMessage = `Come on! Quit playing around!`
+        }
+        else {
+          newBalance = this.state.balance - this.state.amount
+          newMessage = `Sure, take my money... Here\'s ${this.state.amount}kr.`
+        }
         break
     }
     this.setState({ balance: newBalance, message: newMessage })
