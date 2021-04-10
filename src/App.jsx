@@ -8,10 +8,20 @@ class App extends Component {
     amount: 0
   }
 
-  withdraw() {
-    const newBalance = this.state.balance - this.state.amount
+  transaction(type) {
+    let newBalance
+    switch (type) {
+      case "deposit":
+        newBalance = this.state.balance + this.state.amount
+        break
+      case "withdraw":
+        newBalance = this.state.balance - this.state.amount
+        break
+    }
     this.setState({ balance: newBalance })
   }
+
+
   render() {
     return (
       <div className="frame">
@@ -27,9 +37,11 @@ class App extends Component {
         </div>
         <div className="buttons">
           <button id="withdraw-button"
-            onClick={() => this.withdraw()}
+            onClick={() => this.transaction('withdraw')}
           >Withdraw</button>
-          <button>Deposit</button>
+          <button id="deposit-button"
+            onClick={() => this.transaction('deposit')}
+          >Deposit</button>
         </div>
       </div>
     );
